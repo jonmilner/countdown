@@ -57,18 +57,16 @@ module.exports = function(grunt) {
     'concat': {
       dist: {
         src: [
-          'public/assets/js/vendor/*.js',
-          'public/assets/js/plugins/*.js',
-          'public/assets/js/scripts.js'
+          'public/assets/js/scripts/*.js'
         ],
-        dest: 'public/assets/js/scripts.concat.js'
+        dest: 'public/assets/js/scripts.js'
       }
     },
 
     'uglify': {
       build: {
-        src: 'public/assets/js/scripts.concat.js',
-        dest: 'public/assets/js/scripts.min.js'
+        src: 'public/assets/js/scripts.js',
+        dest: 'public/assets/js/scripts.js'
       }
     },
 
@@ -113,7 +111,7 @@ module.exports = function(grunt) {
         tasks: ['compass', 'autoprefixer', 'cssmin']
       },
       js: {
-        files: ['public/assets/js/*.js'],
+        files: ['public/assets/js/scripts/*.js'],
         tasks: ['concat', 'uglify']
       },
       images: {
