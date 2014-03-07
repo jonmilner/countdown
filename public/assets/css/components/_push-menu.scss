@@ -1,0 +1,54 @@
+.push-body {
+  position: relative;
+  right: 0;
+  min-height: 100%;
+  transition: all .5s ease;
+
+  &.open {
+    cursor: pointer;
+    right: 240px;
+  }
+}
+
+.push-toggle {
+  position: absolute;
+  display: block;
+  margin: 20px;
+  padding: 0;
+  width: 50px;
+  height: 50px;
+  top: 0;
+  right: 0;
+  line-height: 0;
+  background: shade(#08c,25%);
+  border: none;
+  border-radius: 50%;
+  color: tint(#08c,25%);
+  font-size: 24px;
+  opacity: 0.75;
+  -webkit-appearance: none;
+  transition: all .2s ease;
+  z-index: 2;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.push-menu {
+  position: fixed;
+  width: 240px;
+  height: 100%;
+  top: 0;
+  right: -240px;
+  background: shade(#08c,75%);
+  cursor: default;
+  -webkit-overflow-scrolling: touch;
+  overflow-y: auto;
+  transition: right .5s ease;
+  z-index: 1000;
+
+  &.open {
+    right: 0;
+  }
+}

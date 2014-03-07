@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Countdown</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/styles.css">
+  </head>
+  <body>
+    <hr class="test-offset" id="test-offset" style="display: none">
+    <div class="push-body">
+      <div class="main">
+        <button class="push-toggle"><span class="icon-gear"></span></button>
+        <div class="counter">
+          <h2>
+            <span class="counter-value"></span>
+            <span class="counter-max"></span>
+            <span class="counter-unit"></span>
+          </h2>
+        </div>
+        <div class="progress" data-progress="50">
+          <div class="circle">
+            <div class="mask full">
+              <div class="fill"></div>
+            </div>
+            <div class="mask half">
+              <div class="fill"></div>
+              <div class="fill fix"></div>
+            </div>
+          </div>
+          <a class="back-to-top" href="#" id="top"><span class="icon-arrow"></span></a>
+          <div class="inset"></div>
+        </div>
+
+      </div>
+    </div>
+    <div class="push-menu">
+      <div class="control-panel current-unit-px">
+        <div class="form-group">
+          <label>Set Page Height</label>
+          <div class="input-group input-group-sm">
+            <input class="form-control update-value" data-option="pageHeight" placeholder="10,000" type="number">
+            <span class="input-group-addon">px</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Set Scroll Speed</label>
+          <div class="input-group input-group-sm">
+            <input class="form-control update-value" data-option="launchSpeed" placeholder="5,000" type="number">
+            <span class="input-group-addon">ms</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Set Offset</label>
+          <div class="input-group input-group-sm">
+            <input class="form-control update-value" data-option="offset" placeholder="0" type="number">
+            <span class="input-group-addon">px</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Set Units</label>
+          <div class="btn-group-vertical btn-group-sm" id="control-units">
+            <button type="button" class="btn btn-default active" data-unit="px">Pixels</button>
+            <button type="button" class="btn btn-default" data-unit="percent">Percentage</button>
+            <button type="button" class="btn btn-default" data-unit="blocks">Blocks</button>
+          </div>
+        </div>
+        <div class="form-group control-blocks">
+          <label>Set # of Blocks</label>
+          <div class="input-group input-group-sm">
+            <input class="form-control update-value" data-option="blocks" placeholder="10" type="number">
+            <span class="input-group-addon">Blocks</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Additional Options</label>
+          <div class="btn-group-vertical btn-group-sm" id="control-units">
+            <button type="button" class="btn btn-default" id="option-reverse">Count Down</button>
+            <button type="button" class="btn btn-default" id="option-start">Start at Bottom</button>
+            <button type="button" class="btn btn-default" id="option-test-offset">Test Offset On</button>
+            <button type="button" class="btn btn-default" id="option-out-of">Show Remaining On</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="components/jquery/dist/jquery.min.js"></script>
+    <script src="assets/js/countdown.js"></script>
+    <script src="assets/js/pushMenu.js"></script>
+  </body>
+</html>

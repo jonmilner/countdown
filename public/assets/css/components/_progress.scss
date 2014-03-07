@@ -1,0 +1,89 @@
+.progress {
+  $circle-size: 50px;
+  $circle-background: tint(#08c, 50%);
+  $circle-color: #08c;
+  $inset-size: 40px;
+  $inset-color: tint(#08c, 75%);
+
+  position: absolute;
+  margin: 20px;
+  bottom: 0;
+  right: 0;
+  width:  $circle-size;
+  height: $circle-size;
+  background-color: $circle-background;
+  border-radius: 50%;
+
+  .circle {
+
+    .mask,
+    .fill {
+      width:    $circle-size;
+      height:   $circle-size;
+      position: absolute;
+      border-radius: 50%;
+    }
+
+    .mask,
+    .fill {
+      -webkit-backface-visibility: hidden;
+      border-radius: 50%;
+    }
+
+    .mask {
+      clip: rect(0px, $circle-size, $circle-size, $circle-size/2);
+
+      .fill {
+        clip: rect(0px, $circle-size/2, $circle-size, 0px);
+        background-color: $circle-color;
+      }
+    }
+  }
+
+  .inset {
+    width:       $inset-size;
+    height:      $inset-size;
+    position:    absolute;
+    margin-left: ($circle-size - $inset-size)/2;
+    margin-top:  ($circle-size - $inset-size)/2;
+    background-color: $inset-color;
+    border-radius: 50%;
+  }
+
+  $i: 0;
+  $increment: 180deg / 100;
+
+  @for $i from 1 through 100 {
+
+    &[data-progress="#{$i}"] {
+
+      .circle {
+
+        .mask.full,
+        .fill {
+          transform: rotate($increment * $i);
+        }
+
+        .fill.fix {
+          transform: rotate($increment * $i * 2);
+        }
+      }
+    }
+  }
+
+  .back-to-top {
+    position: absolute;
+    display: block;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: $circle-size;
+    height: $circle-size;
+    padding-top: 10px;
+    color: #08c;
+    font-size: 22px;
+    transition: all .2s ease;
+    z-index: 1;
+  }
+}
