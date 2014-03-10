@@ -20,7 +20,6 @@
       $body.addClass('open');
       return false;
     }
-
   });
 
   $pushBody.on(eventtype, function(e) {
