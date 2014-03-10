@@ -1,13 +1,37 @@
+body {
+
+  &.open {
+
+    .push-body {
+      cursor: pointer;
+      right: 240px;
+    }
+
+    .push-menu {
+      right: 0;
+    }
+  }
+}
+
 .push-body {
   position: relative;
   right: 0;
   min-height: 100%;
   transition: all .5s ease;
+}
 
-  &.open {
-    cursor: pointer;
-    right: 240px;
-  }
+.push-menu {
+  position: fixed;
+  width: 240px;
+  height: 100%;
+  top: 0;
+  right: -240px;
+  background: shade(#08c,75%);
+  cursor: default;
+  -webkit-overflow-scrolling: touch;
+  overflow-y: auto;
+  transition: right .5s ease;
+  z-index: 1000;
 }
 
 .push-toggle {
@@ -32,23 +56,5 @@
 
   &:hover {
     opacity: 1;
-  }
-}
-
-.push-menu {
-  position: fixed;
-  width: 240px;
-  height: 100%;
-  top: 0;
-  right: -240px;
-  background: shade(#08c,75%);
-  cursor: default;
-  -webkit-overflow-scrolling: touch;
-  overflow-y: auto;
-  transition: right .5s ease;
-  z-index: 1000;
-
-  &.open {
-    right: 0;
   }
 }

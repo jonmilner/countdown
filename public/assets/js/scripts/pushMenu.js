@@ -1,4 +1,4 @@
-function pushMenu() {
+(function() {
 
   var $body = $('body');
       $pushBody = $('.push-body'),
@@ -12,26 +12,23 @@ function pushMenu() {
     return false;
   }
 
-  $togglePush.on('click', function() {
+  $togglePush.on(eventtype, function() {
     if ($body.hasClass('open')) {
-      $body.add($pushBody).add($pushMenu).removeClass('open');
+      $body.removeClass('open');
       return false;
     } else {
-      $body.add($pushBody).add($pushMenu).addClass('open');
+      $body.addClass('open');
       return false;
     }
 
   });
 
   $pushBody.on(eventtype, function(e) {
-    $body.add($pushBody).add($pushMenu).removeClass('open');
+    $body.removeClass('open');
     $pushMenu.on(eventtype, function(e){
-       e.stopPropagation();
+      e.stopPropagation();
     });
     return false;
   });
-}
 
-$(document).ready(function () {
-  pushMenu();
-});
+})();
